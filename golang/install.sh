@@ -18,10 +18,10 @@ if [ $? -ne 0 ]; then
 	PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 	sudo bash -c "cat > /etc/profile.d/goroot.sh << EOF
-	export GOROOT=$GOROOT
-	export GOPATH=$GOPATH
-	export PATH=\$PATH:$GOROOT/bin:$GOPATH/bin
-	EOF"
+export GOROOT=$GOROOT
+export GOPATH=$GOPATH
+export PATH=\$PATH:$GOROOT/bin:$GOPATH/bin
+EOF"
 
 	sudo mkdir -p $GOROOT
 	curl -sL $GO_URL | (cd $GOROOT && sudo tar --strip-components 1 -xz)
